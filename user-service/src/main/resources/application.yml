@@ -1,0 +1,25 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8000/eureka/
+spring:
+  application:
+    name: user-service
+
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/sys-user?useUnicode=true&characterEncoding=utf8&characterSetResults=utf8
+    username: root
+    password: 133309
+mybatis:
+  mapper-locations: classpath:mapper/*
+  type-aliases-package: com.wx.userservice.domain.*
+mapper:
+  mappers: com.wx.userservice.utils.IBaseDao
+  identity: MYSQL
+server:
+  port: 8002
+
+feign:
+  hystrix:
+   enabled: false
